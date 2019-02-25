@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'formsTemplateDriven';
+  user =  {email: '', subscription: ''};
+
+  onSubmit(form: HTMLFormElement) {
+     this.user.email = form.value.email;
+     this.user.subscription = form.value.subscription;
+     form.reset();
+  }
 }
